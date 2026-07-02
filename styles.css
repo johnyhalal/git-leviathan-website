@@ -1,0 +1,357 @@
+/* ---- Fonts (self-hosted, same files the app ships) ----------------------- */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('assets/fonts/Roboto-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('assets/fonts/RobotoCondensed-latin.woff2') format('woff2');
+}
+
+/* ---- Design tokens (pulled from the GitLeviathan app) --------------------- */
+:root {
+  --primary: #43d7c7; /* app accent */
+  --primary-ink: #06251f; /* text on accent, as in the app */
+  --deep-top: #263548; /* splash gradient top */
+  --deep-bottom: #090915; /* splash gradient bottom */
+  --fg: #f2f2f5; /* app dark-theme foreground */
+  --fg-muted: #a1a1aa; /* app dark-theme muted */
+  --elev: #2a2a33; /* app dark-theme elevated surface */
+  --border: rgba(255, 255, 255, 0.12);
+  --control-bg: rgba(255, 255, 255, 0.06);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(180deg, var(--deep-top) 0%, var(--deep-bottom) 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Soft teal glow behind the hero, echoing the accent colour. */
+.glow {
+  position: fixed;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(67, 215, 199, 0.18) 0%,
+    rgba(67, 215, 199, 0) 68%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+main,
+.nav,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---- Nav ----------------------------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 26px;
+  height: auto;
+}
+
+.brand-name {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--fg);
+}
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 56px 24px 40px;
+}
+
+.hero-logo {
+  width: 132px;
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(9, 9, 21, 0.6));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-title {
+  margin: 26px 0 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: clamp(40px, 8vw, 68px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.hero-tagline {
+  margin: 16px 0 0;
+  max-width: 520px;
+  font-size: clamp(16px, 2.4vw, 20px);
+  color: var(--fg-muted);
+}
+
+/* ---- Download button ----------------------------------------------------- */
+.download {
+  margin-top: 34px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: var(--primary);
+  color: var(--primary-ink);
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(67, 215, 199, 0.28);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: 0 16px 38px rgba(67, 215, 199, 0.38);
+}
+
+.btn-icon {
+  flex: 0 0 auto;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.btn-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn-sub {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.72;
+}
+
+.hero-note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+/* ---- Features ------------------------------------------------------------ */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1040px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+.feature {
+  padding: 26px 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--control-bg);
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.feature h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-muted);
+}
+
+/* ---- Install note -------------------------------------------------------- */
+.install {
+  max-width: 1040px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+}
+
+.install-card {
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 16px;
+  background: var(--elev);
+}
+
+.install-card h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.install-card p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+
+.install-card strong {
+  color: var(--fg);
+}
+
+.install-card pre {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+}
+
+.install-card code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  color: var(--primary);
+}
+
+/* ---- Footer -------------------------------------------------------------- */
+.footer {
+  max-width: 1040px;
+  margin: 64px auto 0;
+  padding: 28px 24px 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-muted {
+  margin: 6px 0 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 720px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
