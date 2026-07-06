@@ -236,6 +236,13 @@ a {
   backdrop-filter: blur(6px);
 }
 
+.feature-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
 .feature-icon {
   display: inline-flex;
   align-items: center;
@@ -246,6 +253,10 @@ a {
   background: var(--control-bg);
   color: var(--primary);
   margin-bottom: 16px;
+}
+
+.feature-icons .feature-icon {
+  margin-bottom: 0;
 }
 
 .feature-icon svg {
