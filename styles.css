@@ -432,6 +432,67 @@ button.btn-download {
   color: var(--primary);
 }
 
+/* ---- Legal (privacy) ----------------------------------------------------- */
+.legal {
+  max-width: 760px;
+  margin: 24px auto 0;
+  padding: 0 24px;
+}
+
+.legal h1 {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: clamp(32px, 6vw, 46px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+.legal-updated {
+  margin: 10px 0 28px;
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.legal h2 {
+  margin: 34px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.legal p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+
+.legal ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.legal li {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+
+.legal strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.legal a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
 /* ---- Footer -------------------------------------------------------------- */
 .footer {
   max-width: 1040px;
