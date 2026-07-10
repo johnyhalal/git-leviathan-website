@@ -433,6 +433,12 @@ button.btn-download {
   color: var(--primary);
 }
 
+.feature p code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: var(--primary);
+}
+
 /* ---- Legal (privacy) ----------------------------------------------------- */
 .legal {
   max-width: 760px;
