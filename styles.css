@@ -178,6 +178,7 @@ a {
   gap: 12px;
   padding: 14px 26px;
   border-radius: 14px;
+  border: 0;
   background: var(--primary);
   color: var(--primary-ink);
   text-decoration: none;
