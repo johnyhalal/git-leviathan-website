@@ -10,10 +10,18 @@
     <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GitLeviathan — a desktop GUI for Git</title>
+    <title>GitLeviathan — Free Desktop Git GUI for macOS, Windows &amp; Linux</title>
     <meta
       name="description"
-      content="GitLeviathan is a cross-platform desktop GUI for Git. Download the macOS app."
+      content="GitLeviathan is a fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages. Download for free."
+    />
+    <link rel="canonical" href="https://gitleviathan.com/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#263548" />
+    <meta name="author" content="GitLeviathan" />
+    <meta
+      name="keywords"
+      content="Git GUI, Git client, desktop Git, commit graph, macOS Git client, Windows Git client, Linux Git client, GitLeviathan"
     />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link
@@ -32,12 +40,55 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="GitLeviathan — a desktop GUI for Git" />
+    <meta property="og:site_name" content="GitLeviathan" />
+    <meta property="og:url" content="https://gitleviathan.com/" />
+    <meta
+      property="og:title"
+      content="GitLeviathan — Free Desktop Git GUI for macOS, Windows &amp; Linux"
+    />
     <meta
       property="og:description"
-      content="A cross-platform desktop GUI for Git. Download the macOS app."
+      content="A fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages."
     />
-    <meta property="og:image" content="assets/app_icon.png" />
+    <meta property="og:image" content="https://gitleviathan.com/assets/app_icon.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="GitLeviathan app icon" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="GitLeviathan — Free Desktop Git GUI for macOS, Windows &amp; Linux"
+    />
+    <meta
+      name="twitter:description"
+      content="A fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages."
+    />
+    <meta name="twitter:image" content="https://gitleviathan.com/assets/app_icon.png" />
+    <meta name="twitter:image:alt" content="GitLeviathan app icon" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GitLeviathan",
+        "url": "https://gitleviathan.com/",
+        "description": "GitLeviathan is a fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "image": "https://gitleviathan.com/assets/app_icon.png",
+        "softwareHelp": "https://github.com/johnyhalal/git-leviathan",
+        "license": "https://opensource.org/licenses/MIT",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -49,7 +100,7 @@
     <div class="glow" aria-hidden="true"></div>
 
     <header class="nav">
-      <a class="brand" href="#">
+      <a class="brand" href="/">
         <img
           class="brand-mark"
           src="assets/leviathan_transparent.png"
@@ -123,6 +174,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_macos_arm64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-macOS-arm64.dmg"
                 >
                   <span class="menu-label">Apple Silicon</span>
@@ -132,6 +184,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_macos_x64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-macOS-x64.dmg"
                 >
                   <span class="menu-label">Intel</span>
@@ -144,6 +197,7 @@
           <a
             class="btn-download btn-secondary"
             data-os="windows"
+            data-download="download_windows"
             href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-Windows-Setup.exe"
           >
             <svg
@@ -207,6 +261,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_linux_deb_x64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-Linux-x64.deb"
                 >
                   <span class="menu-label">x64</span>
@@ -216,6 +271,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_linux_deb_arm64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-Linux-arm64.deb"
                 >
                   <span class="menu-label">arm64</span>
@@ -228,6 +284,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_linux_rpm_x64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-Linux-x64.rpm"
                 >
                   <span class="menu-label">x64</span>
@@ -237,6 +294,7 @@
               <li role="none">
                 <a
                   role="menuitem"
+                  data-download="download_linux_rpm_arm64"
                   href="https://github.com/johnyhalal/git-leviathan/releases/latest/download/GitLeviathan-Linux-arm64.rpm"
                 >
                   <span class="menu-label">arm64</span>
@@ -254,6 +312,7 @@
 
       <!-- Features -->
       <section class="features" id="features">
+        <h2 class="visually-hidden">Features</h2>
         <article class="feature">
           <div class="feature-icons">
             <div class="feature-icon">
@@ -604,6 +663,25 @@
           '.btn-download[data-os="' + os + '"]',
         );
         if (match) match.classList.remove("btn-secondary");
+      })();
+
+      // Push a distinct GTM event for each download type on click.
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        var links = Array.prototype.slice.call(
+          document.querySelectorAll("[data-download]"),
+        );
+        links.forEach(function (link) {
+          link.addEventListener("click", function () {
+            var event = link.getAttribute("data-download");
+            window.dataLayer.push({
+              event: event,
+              download_file: (link.getAttribute("href") || "")
+                .split("/")
+                .pop(),
+            });
+          });
+        });
       })();
     </script>
   </body>
