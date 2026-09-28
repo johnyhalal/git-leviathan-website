@@ -50,12 +50,12 @@
       property="og:description"
       content="A fast, free desktop Git client for macOS, Windows &amp; Linux — with a visual commit graph, diffs, and AI-drafted commits."
     />
-    <meta property="og:image" content="https://gitleviathan.com/assets/og-image.png" />
+    <meta property="og:image" content="https://gitleviathan.com/assets/og-image.png?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="GitLeviathan — a free desktop Git client for macOS, Windows, and Linux"
+      content="GitLeviathan, a free desktop Git client for macOS, Windows, and Linux, showing its commit graph with branches, tags, and merges"
     />
     <meta property="og:locale" content="en_US" />
 
@@ -69,10 +69,10 @@
       name="twitter:description"
       content="A fast, free desktop Git client for macOS, Windows &amp; Linux — with a visual commit graph, diffs, and AI-drafted commits."
     />
-    <meta name="twitter:image" content="https://gitleviathan.com/assets/og-image.png" />
+    <meta name="twitter:image" content="https://gitleviathan.com/assets/og-image.png?v=2" />
     <meta
       name="twitter:image:alt"
-      content="GitLeviathan — a free desktop Git client for macOS, Windows, and Linux"
+      content="GitLeviathan, a free desktop Git client for macOS, Windows, and Linux, showing its commit graph with branches, tags, and merges"
     />
 
     <!-- Structured data -->
@@ -116,6 +116,7 @@
         <span class="brand-name">GitLeviathan</span>
       </a>
       <nav class="nav-links">
+        <a href="#tour">Tour</a>
         <a href="#features">Features</a>
         <a
           href="https://github.com/johnyhalal/git-leviathan"
@@ -135,7 +136,7 @@
           alt="GitLeviathan"
         />
         <h1 class="hero-title">GitLeviathan</h1>
-        <p class="hero-tagline">A fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages.</p>
+        <p class="hero-tagline">A fast, free desktop Git client for macOS, Windows, and Linux. Visualize your commit graph, stage and diff changes, branch, merge, and sync — with AI-drafted commit messages and AI-assisted conflict resolution.</p>
 
         <div class="download">
           <div class="dropdown" id="mac-dropdown">
@@ -316,6 +317,71 @@
         </p>
       </section>
 
+      <!-- Screenshots -->
+      <section class="showcase" id="tour" aria-labelledby="tour-title">
+        <h2 class="visually-hidden" id="tour-title">A look inside</h2>
+        <div class="showcase-tabs" role="tablist" aria-label="Screenshots">
+          <button type="button" role="tab" id="tab-graph" aria-controls="shot-graph" aria-selected="true">Commit graph</button>
+          <button type="button" role="tab" id="tab-diff" aria-controls="shot-diff" aria-selected="false" tabindex="-1">Diff viewer</button>
+          <button type="button" role="tab" id="tab-conflicts" aria-controls="shot-conflicts" aria-selected="false" tabindex="-1">Conflict resolver</button>
+          <button type="button" role="tab" id="tab-palette" aria-controls="shot-palette" aria-selected="false" tabindex="-1">Command palette</button>
+        </div>
+
+        <div class="showcase-stage">
+          <figure class="shot is-active" role="tabpanel" id="shot-graph" aria-labelledby="tab-graph">
+            <img
+              src="assets/screens/main-view-1200.webp"
+              srcset="assets/screens/main-view-1200.webp 1200w, assets/screens/main-view-2400.webp 2400w"
+              sizes="(max-width: 1208px) calc(100vw - 48px), 1160px"
+              width="1200"
+              height="713"
+              fetchpriority="high"
+              alt="GitLeviathan showing the Flask repository: a sidebar of branches and tags, a colour-laned commit graph with merges from the stable branch, and the commit details panel."
+            />
+            <figcaption>Every branch, merge, tag, and stash in one topo-ordered graph — click a commit for its files, authors, and co-authors.</figcaption>
+          </figure>
+
+          <figure class="shot" role="tabpanel" id="shot-diff" aria-labelledby="tab-diff" aria-hidden="true">
+            <img
+              src="assets/screens/diff-view-1200.webp"
+              srcset="assets/screens/diff-view-1200.webp 1200w, assets/screens/diff-view-2400.webp 2400w"
+              sizes="(max-width: 1208px) calc(100vw - 48px), 1160px"
+              width="1200"
+              height="713"
+              loading="lazy"
+              alt="A split side-by-side diff of a README with added and removed lines, next to the staged and unstaged file lists and a commit message drafted by Claude."
+            />
+            <figcaption>Split, inline, or hunk diffs with line-level staging — and a commit message drafted from your staged changes.</figcaption>
+          </figure>
+
+          <figure class="shot" role="tabpanel" id="shot-conflicts" aria-labelledby="tab-conflicts" aria-hidden="true">
+            <img
+              src="assets/screens/conflict-solver-1200.webp"
+              srcset="assets/screens/conflict-solver-1200.webp 1200w, assets/screens/conflict-solver-2400.webp 2400w"
+              sizes="(max-width: 1208px) calc(100vw - 48px), 1160px"
+              width="1200"
+              height="713"
+              loading="lazy"
+              alt="The conflict resolver: a list of conflicted files, Ours and Theirs panes with selectable lines, an output pane, and Auto Resolve buttons."
+            />
+            <figcaption>Pick lines from ours and theirs, type the result yourself, or let Claude auto-resolve a block or the whole file.</figcaption>
+          </figure>
+
+          <figure class="shot" role="tabpanel" id="shot-palette" aria-labelledby="tab-palette" aria-hidden="true">
+            <img
+              src="assets/screens/command-palette-1200.webp"
+              srcset="assets/screens/command-palette-1200.webp 1200w, assets/screens/command-palette-2400.webp 2400w"
+              sizes="(max-width: 1208px) calc(100vw - 48px), 1160px"
+              width="1200"
+              height="713"
+              loading="lazy"
+              alt="The command palette open over the commit graph, listing commands such as Pull, Push, Find Commit, New Branch, and Open in Editor with their keyboard shortcuts."
+            />
+            <figcaption>Press <code>⌘P</code> and type — every action, with its shortcut, one keystroke away.</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <!-- Features -->
       <section class="features" id="features">
         <h2 class="visually-hidden">Features</h2>
@@ -378,8 +444,9 @@
           </div>
           <h3>Native on every desktop</h3>
           <p>
-            A fast, focused window that runs natively on macOS, Windows, and
-            Linux — no browser tab, no distractions, just your repositories.
+            A fast, focused window on macOS, Windows, and Linux that ships its
+            own git — and opens any repo or file in your editor, terminal, or
+            file manager in one click.
           </p>
         </article>
 
@@ -405,9 +472,9 @@
           </div>
           <h3>Visual commit graph</h3>
           <p>
-            A topo-ordered graph with branch and tag leader lines, your
-            uncommitted working tree, and stashes all woven in — click any
-            commit for its files, metadata, and author avatars.
+            A topo-ordered graph with your working tree and stashes woven in.
+            Search the whole history by message, author, or hash, hide the
+            branches you don&rsquo;t care about, and see co-authors at a glance.
           </p>
         </article>
 
@@ -423,17 +490,44 @@
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
-                <path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4" />
-                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                <path d="M12 3v18" />
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="M12 11v6" />
+                <path d="M9 14h6" />
+              </svg>
+            </div>
+          </div>
+          <h3>Diffs, down to the line</h3>
+          <p>
+            Read changes as hunks, inline, or split side-by-side, then stage,
+            unstage, or discard a file, a hunk, or just the lines you pick —
+            with blame and file history one click away.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icons">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M2 12h6" />
+                <path d="M16 12h6" />
               </svg>
             </div>
           </div>
           <h3>Stage, commit &amp; rewrite</h3>
           <p>
-            Review side-by-side diffs, stage or discard changes, then commit,
-            amend, reword, or push in one step — with undo and redo for
-            ref-changing operations.
+            Commit, amend, reword, sign with GPG or SSH, and push in one step —
+            with undo and redo for ref-changing operations, and stashes with
+            options down to a single file.
           </p>
         </article>
 
@@ -458,9 +552,35 @@
           </div>
           <h3>Branch, merge &amp; sync</h3>
           <p>
-            Create, checkout, and delete local and remote branches, merge or
-            rebase, run Gitflow starts and finishes, and push or pull with a
-            configurable mode.
+            Manage branches, tags, and remotes; merge, rebase, cherry-pick, or
+            reset with a preview; run Gitflow starts and finishes; and push or
+            pull with a configurable mode.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icons">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="18" cy="18" r="3" />
+                <circle cx="6" cy="6" r="3" />
+                <path d="M6 21V9a9 9 0 0 0 9 9" />
+              </svg>
+            </div>
+          </div>
+          <h3>Conflicts, untangled</h3>
+          <p>
+            Resolve merge conflicts line by line in an ours / theirs / output
+            editor, preview conflicting images, or ask Claude to suggest a
+            resolution for a block or the whole file.
           </p>
         </article>
 
@@ -503,6 +623,30 @@
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
+                <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 0 0 0-6z" />
+              </svg>
+            </div>
+          </div>
+          <h3>Keyboard-first</h3>
+          <p>
+            Reach every action from the <code>⌘P</code> command palette or the
+            native menu, with shortcut hints in tooltips and a full list in
+            Settings.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icons">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
                 <circle cx="7.5" cy="15.5" r="4.5" />
                 <path d="M10.7 12.3 21 2" />
                 <path d="M17 6l3 3" />
@@ -512,9 +656,9 @@
           </div>
           <h3>Secure by default</h3>
           <p>
-            Generate ed25519 SSH keys, connect accounts over OAuth device flow,
-            and clone with authenticated URLs — secrets are always redacted from
-            anything shown on screen.
+            Generate ed25519 SSH keys, connect accounts over OAuth or a
+            personal access token, and clone with authenticated URLs — secrets
+            are always redacted from anything shown on screen.
           </p>
         </article>
 
@@ -538,8 +682,8 @@
           <h3>AI-drafted commits</h3>
           <p>
             Turn your staged diff into a clear commit message with a single
-            click, powered by your locally installed <code>claude</code> CLI —
-            no credentials stored in the app.
+            click, on the model of your choice — powered by your locally
+            installed <code>claude</code> CLI, no credentials stored in the app.
           </p>
         </article>
 
@@ -578,7 +722,8 @@
           <h3>Light &amp; dark themes</h3>
           <p>
             A clean interface that follows your system appearance, or switch
-            between light and dark whenever you like.
+            between light and dark whenever you like — with dates shown the
+            way you read them.
           </p>
         </article>
       </section>
@@ -644,6 +789,43 @@
 
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape") closeAll();
+        });
+      })();
+
+      // Screenshot tabs: click or arrow keys switch the visible shot.
+      (function () {
+        var tabs = Array.prototype.slice.call(
+          document.querySelectorAll('.showcase-tabs [role="tab"]'),
+        );
+        if (!tabs.length) return;
+
+        function select(tab, focus) {
+          tabs.forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute("aria-selected", on ? "true" : "false");
+            t.tabIndex = on ? 0 : -1;
+            var panel = document.getElementById(t.getAttribute("aria-controls"));
+            panel.classList.toggle("is-active", on);
+            if (on) panel.removeAttribute("aria-hidden");
+            else panel.setAttribute("aria-hidden", "true");
+          });
+          if (focus) tab.focus();
+        }
+
+        tabs.forEach(function (tab, i) {
+          tab.addEventListener("click", function () {
+            select(tab, false);
+          });
+          tab.addEventListener("keydown", function (e) {
+            var next = null;
+            if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+            else if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length];
+            else if (e.key === "Home") next = tabs[0];
+            else if (e.key === "End") next = tabs[tabs.length - 1];
+            if (!next) return;
+            e.preventDefault();
+            select(next, true);
+          });
         });
       })();
 

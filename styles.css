@@ -327,6 +327,108 @@ button.btn-download {
   color: var(--fg-muted);
 }
 
+/* ---- Screenshots --------------------------------------------------------- */
+.showcase {
+  max-width: 1208px;
+  margin: 24px auto 0;
+  padding: 0 24px;
+}
+
+.showcase-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--control-bg);
+}
+
+.showcase-tabs [role='tab'] {
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--fg-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.showcase-tabs [role='tab']:hover {
+  color: var(--fg);
+}
+
+.showcase-tabs [role='tab'][aria-selected='true'] {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.showcase-tabs [role='tab']:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Shots are stacked in one grid cell so switching cross-fades without the
+   stage changing height. */
+.showcase-stage {
+  display: grid;
+}
+
+.shot {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+.shot.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* The captures keep the macOS window's transparent rounded corners, so the
+   shadow is a drop-shadow that follows them rather than a box-shadow. */
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 80px rgba(67, 215, 199, 0.12));
+}
+
+.shot figcaption {
+  max-width: 620px;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg-muted);
+}
+
+.shot figcaption code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: var(--primary);
+}
+
 /* ---- Features ------------------------------------------------------------ */
 .features {
   display: grid;
@@ -532,11 +634,21 @@ button.btn-download {
   .features {
     grid-template-columns: 1fr;
   }
+  .showcase-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-logo {
     animation: none;
+  }
+  .shot,
+  .shot.is-active {
+    transform: none;
+    transition: none;
   }
   html {
     scroll-behavior: auto;
